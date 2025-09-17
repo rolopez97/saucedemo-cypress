@@ -8,8 +8,6 @@ describe("Sauce Demo Log in", () => {
         cy.get('#password').type('secret_sauce')
         cy.get('#login-button').click()
         cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
-
     })
 
-   
 })

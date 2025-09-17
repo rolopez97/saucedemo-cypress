@@ -3,7 +3,8 @@ class homeSaucePage{
     elements = {
         usernameInput: () => cy.get('#user-name'),
         passwordInput: () => cy.get('#password'),
-        loginButton: () => cy.get('#login-button')
+        loginButton: () => cy.get('#login-button'),
+        errorMessage: () => cy.get('h3[data-test="error"]')
   }
 
     typeUsername(username){
@@ -17,6 +18,11 @@ class homeSaucePage{
     clickLogin(){
         this.elements.loginButton().click();
     }
+
+    verifyLoginError(expectedMessage) {
+        this.elements.errorMessage().should('contain.text', expectedMessage);
+    }
+
 
 }
 
