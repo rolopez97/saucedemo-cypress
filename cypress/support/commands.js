@@ -41,3 +41,8 @@ Cypress.Commands.add('logout', () => {
   Cypress.Commands.add('assertion_text', (selector, text) => { 
    cy.get(selector).should('have.text',text)
 })
+
+Cypress.Commands.add('assertTitleIsProducts', () => {
+  cy.get('.title').should('have.text', 'Products');
+
+});
