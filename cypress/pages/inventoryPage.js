@@ -14,28 +14,35 @@ class inventoryPage{
         },
 
     }
-    abrirMenu() {
-        this.elements.menu().click()
-    }
-    logout() {
-        this.elements.logout().click()
 
-    }
-    ver_titulo() {
+    checkTitle() {
         this.elements.page_title().should('have.text', 'Products')
     }
 
-    verificarImagen() {
+    verifyImage() {
         this.elements.product1.img().click()
     }
 
-    verificarTitulo(texto) {
+    verifyProdTitle(texto) {
         this.elements.product1.prod_title().should('have.text', texto)
     }
 
-    verificarPrecio(dato) {
+    verifyPrice(dato) {
         this.elements.product1.price().should('have.text', dato)
     }
+
+    addToCart(){
+        this.elements.product1.btn_add().click()
+    }
+
+    verifyBtnRemove(){
+        this.elements.product1.btn_remove().should('exist')
+
+    }
+    clickIconCart() {
+        this.elements.icon_cart().should('exist').click();
+    }
+
 }
 
 export default new inventoryPage();
